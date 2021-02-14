@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProgChallenge.Application.Features.TodoLists.Commands.CreateTodoList;
 using ProgChallenge.Application.Features.TodoLists.Commands.DeleteTodoListById;
+using ProgChallenge.Application.Features.TodoLists.Commands.UpdateTodoList;
 using ProgChallenge.Application.Features.TodoLists.Queries.GetAllTodoLists;
 using ProgChallenge.Application.Features.TodoLists.Queries.GetTodoListById;
 using System;
@@ -29,6 +30,12 @@ namespace ProgChallenge.WebApi.Controllers.v1
         public async Task<IActionResult> Post(CreateTodoListCommand command)
         {
             return Ok(await Mediator.Send(command));
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, UpdateTodoListCommand command)
+        {
+            return Ok(await Mediator.Send(new UpdateTodoListByIdCommand(command, id)));
         }
 
         [HttpDelete("{id}")]

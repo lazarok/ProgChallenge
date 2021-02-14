@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using ProgChallenge.Domain.Enums;
+using ProgChallenge.Application.DTO.TodoItem;
+using AutoMapper;
 
 namespace ProgChallenge.Application.Features.TodoItems.Commands.UpdateTodoItem
 {
-    public class UpdateTodoItemCommand : IRequest<Response<int>>
+    public class UpdateTodoItemCommand : IRequest<Response<TodoItemDto>>
     {
         public string Title { get; set; }
         public string Note { get; set; }
@@ -34,14 +36,17 @@ namespace ProgChallenge.Application.Features.TodoItems.Commands.UpdateTodoItem
         }
     }
 
-    public class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoItemByIdCommand, Response<int>>
+    public class UpdateTodoItemCommandHandler : IRequestHandler<UpdateTodoItemByIdCommand, Response<TodoItemDto>>
     {
         private readonly ITodoItemRepositoryAsync _todoItemRepository;
-        public UpdateTodoItemCommandHandler(ITodoItemRepositoryAsync todoItemRepository)
+        private readonly IMapper _mapper;
+
+        public UpdateTodoItemCommandHandler(ITodoItemRepositoryAsync todoItemRepository, IMapper mapper)
         {
             _todoItemRepository = todoItemRepository;
-        }
-        public async Task<Response<int>> Handle(UpdateTodoItemByIdCommand command, CancellationToken cancellationToken)
+            _mapper = mapper;
+    }
+        public async Task<Response<TodoItemDto>> Handle(UpdateTodoItemByIdCommand command, CancellationToken cancellationToken)
         {
             var todoItem = await _todoItemRepository.GetByIdAsync(command.Id);
 
@@ -59,7 +64,8 @@ namespace ProgChallenge.Application.Features.TodoItems.Commands.UpdateTodoItem
                     todoItem.Scheduled = command.Scheduled;
 
                 await _todoItemRepository.UpdateAsync(todoItem);
-                return new Response<int>(todoItem.Id);
+                var todoItemDto = _mapper.Map<TodoItemDto>(todoItem);
+                return new Response<TodoItemDto>(todoItemDto);
             }
         }
     }

@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ProgChallenge.Application.Features.TodoList.Queries.GetTodoListById
+namespace ProgChallenge.Application.Features.TodoLists.Queries.GetTodoListById
 {
     public class GetTodoListByIdQuery : IRequest<Response<TodoListDto>>
     {

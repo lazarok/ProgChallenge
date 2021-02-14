@@ -1,7 +1,7 @@
 ﻿using ProgChallenge.Domain.Common;
+using ProgChallenge.Domain.Enums;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ProgChallenge.Domain.Entities
 {

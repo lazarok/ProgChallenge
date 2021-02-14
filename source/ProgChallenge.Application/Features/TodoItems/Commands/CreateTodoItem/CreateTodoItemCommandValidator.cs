@@ -13,11 +13,9 @@ namespace ProgChallenge.Application.Features.TodoItems.Commands.CreateTodoItem
 {
     public class CreateTodoItemCommandValidator : AbstractValidator<CreateTodoItemCommand>
     {
-        private readonly ITodoItemRepositoryAsync _todoItemRepository;
 
         public CreateTodoItemCommandValidator(ITodoItemRepositoryAsync todoItemRepository)
         {
-            _todoItemRepository = todoItemRepository;
 
             RuleFor(p => p.Title)
                 .NotEmpty().WithMessage("{PropertyName} is required.")

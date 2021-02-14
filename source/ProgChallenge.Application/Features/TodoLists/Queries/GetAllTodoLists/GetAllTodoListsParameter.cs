@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgChallenge.Application.Features.TodoList.Queries.GetAllTodoLists
+namespace ProgChallenge.Application.Features.TodoLists.Queries.GetAllTodoLists
 {
     public class GetAllTodoListsParameter : RequestParameter
     {

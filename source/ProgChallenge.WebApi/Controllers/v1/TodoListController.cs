@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProgChallenge.Application.Features.TodoList.Queries.GetAllTodoLists;
-using ProgChallenge.Application.Features.TodoList.Queries.GetTodoListById;
+using ProgChallenge.Application.Features.TodoLists.Commands.CreateTodoList;
+using ProgChallenge.Application.Features.TodoLists.Queries.GetAllTodoLists;
+using ProgChallenge.Application.Features.TodoLists.Queries.GetTodoListById;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,12 @@ namespace ProgChallenge.WebApi.Controllers.v1
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await Mediator.Send(new GetTodoListByIdQuery { Id = id }));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(CreateTodoListCommand command)
+        {
+            return Ok(await Mediator.Send(command));
         }
     }
 }

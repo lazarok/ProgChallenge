@@ -20,7 +20,6 @@
     <ProjectReference Include="..\ProgChallenge.Domain\ProgChallenge.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\TodoLists\Commands\DeleteTodoListById\" />
     <Folder Include="Features\TodoLists\Commands\AddTodoItem\" />
     <Folder Include="Features\TodoLists\Commands\RemoveTodoItem\" />
     <Folder Include="Features\TodoLists\Commands\UpdateTodoList\" />

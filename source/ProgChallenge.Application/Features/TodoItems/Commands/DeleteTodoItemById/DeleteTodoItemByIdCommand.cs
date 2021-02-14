@@ -15,23 +15,24 @@ namespace ProgChallenge.Application.Features.TodoItems.Commands.DeleteTodoItemBy
     public class DeleteTodoItemByIdCommand : IRequest<Response<TodoItemDto>>
     {
         public int Id { get; set; }
-        public class DeleteTodoItemByIdCommandHandler : IRequestHandler<DeleteTodoItemByIdCommand, Response<TodoItemDto>>
+    }
+
+    public class DeleteTodoItemByIdCommandHandler : IRequestHandler<DeleteTodoItemByIdCommand, Response<TodoItemDto>>
+    {
+        private readonly ITodoItemRepositoryAsync _todoItemRepository;
+        private readonly IMapper _mapper;
+        public DeleteTodoItemByIdCommandHandler(ITodoItemRepositoryAsync todoItemRepository, IMapper mapper)
         {
-            private readonly ITodoItemRepositoryAsync _todoItemRepository;
-            private readonly IMapper _mapper;
-            public DeleteTodoItemByIdCommandHandler(ITodoItemRepositoryAsync todoItemRepository, IMapper mapper)
-            {
-                _todoItemRepository = todoItemRepository;
-                _mapper = mapper;
-            }
-            public async Task<Response<TodoItemDto>> Handle(DeleteTodoItemByIdCommand command, CancellationToken cancellationToken)
-            {
-                var todoItem = await _todoItemRepository.GetByIdAsync(command.Id);
-                if (todoItem == null) throw new ApiException($"TodoItem Not Found.");
-                await _todoItemRepository.DeleteAsync(todoItem);
-                var todoItemDto = _mapper.Map<TodoItemDto>(todoItem);
-                return new Response<TodoItemDto>(todoItemDto);
-            }
+            _todoItemRepository = todoItemRepository;
+            _mapper = mapper;
+        }
+        public async Task<Response<TodoItemDto>> Handle(DeleteTodoItemByIdCommand command, CancellationToken cancellationToken)
+        {
+            var todoItem = await _todoItemRepository.GetByIdAsync(command.Id);
+            if (todoItem == null) throw new ApiException($"TodoItem Not Found.");
+            await _todoItemRepository.DeleteAsync(todoItem);
+            var todoItemDto = _mapper.Map<TodoItemDto>(todoItem);
+            return new Response<TodoItemDto>(todoItemDto);
         }
     }
 }

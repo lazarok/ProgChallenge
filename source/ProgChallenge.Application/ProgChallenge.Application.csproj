@@ -25,7 +25,6 @@
     <Folder Include="Features\TodoList\Commands\AddTodoItem\" />
     <Folder Include="Features\TodoList\Commands\RemoveTodoItem\" />
     <Folder Include="Features\TodoList\Commands\UpdateTodoList\" />
-    <Folder Include="Features\TodoList\Queries\GetTodoListId\" />
     <Folder Include="Features\TodoList\Queries\GetAllTodoItemsById\" />
   </ItemGroup>
 

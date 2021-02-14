@@ -28,9 +28,11 @@ namespace ProgChallenge.Infrastructure.Persistence
                    configuration.GetConnectionString("DefaultConnection"),
                    b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
             }
+
             #region Repositories
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
             services.AddTransient<ITodoItemRepositoryAsync, TodoItemRepositoryAsync>();
+            services.AddTransient<ITodoListRepositoryAsync, TodoListRepositoryAsync>();
             #endregion
         }
     }

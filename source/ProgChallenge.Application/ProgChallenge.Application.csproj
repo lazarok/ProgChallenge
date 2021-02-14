@@ -19,5 +19,14 @@
   <ItemGroup>
     <ProjectReference Include="..\ProgChallenge.Domain\ProgChallenge.Domain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\TodoList\Commands\CreateTodoList\" />
+    <Folder Include="Features\TodoList\Commands\DeleteTodoListById\" />
+    <Folder Include="Features\TodoList\Commands\AddTodoItem\" />
+    <Folder Include="Features\TodoList\Commands\RemoveTodoItem\" />
+    <Folder Include="Features\TodoList\Commands\UpdateTodoList\" />
+    <Folder Include="Features\TodoList\Queries\GetTodoListId\" />
+    <Folder Include="Features\TodoList\Queries\GetAllTodoItemsById\" />
+  </ItemGroup>
 
 </Project>

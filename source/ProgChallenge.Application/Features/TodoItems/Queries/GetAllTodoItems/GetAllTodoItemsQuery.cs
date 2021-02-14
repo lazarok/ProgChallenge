@@ -17,13 +17,14 @@ namespace ProgChallenge.Application.Features.TodoItems.Queries.GetAllTodoItems
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
     }
+
     public class GetAllTodoItemsQueryHandler : IRequestHandler<GetAllTodoItemsQuery, PagedResponse<IEnumerable<TodoItemAllDto>>>
     {
         private readonly ITodoItemRepositoryAsync _todoItemRepository;
         private readonly IMapper _mapper;
-        public GetAllTodoItemsQueryHandler(ITodoItemRepositoryAsync todoItemRRepository, IMapper mapper)
+        public GetAllTodoItemsQueryHandler(ITodoItemRepositoryAsync todoItemRepository, IMapper mapper)
         {
-            _todoItemRepository = todoItemRRepository;
+            _todoItemRepository = todoItemRepository;
             _mapper = mapper;
         }
 

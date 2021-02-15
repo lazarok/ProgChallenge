@@ -19,7 +19,7 @@ namespace ProgChallenge.Application.Features.TodoItems.Commands.UpdateTodoItem
         public string Note { get; set; }
         public PriorityLevel Priority { get; set; }
         public DateTime? Scheduled { get; set; }
-        public bool Done { get; set; }
+        public bool? Done { get; set; }
     }
 
     public class UpdateTodoItemByIdCommand : UpdateTodoItemCommand
@@ -30,6 +30,7 @@ namespace ProgChallenge.Application.Features.TodoItems.Commands.UpdateTodoItem
         {
             Id = id;
             Title = command.Title;
+            Note = command.Note;
             Priority = command.Priority;
             Scheduled = command.Scheduled;
             Done = command.Done;
@@ -62,6 +63,9 @@ namespace ProgChallenge.Application.Features.TodoItems.Commands.UpdateTodoItem
 
                 if (command.Scheduled != default)
                     todoItem.Scheduled = command.Scheduled;
+
+                if (command.Done != null)
+                    todoItem.Done = command.Done.Value;
 
                 await _todoItemRepository.UpdateAsync(todoItem);
                 var todoItemDto = _mapper.Map<TodoItemDto>(todoItem);

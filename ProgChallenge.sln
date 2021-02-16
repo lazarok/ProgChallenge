@@ -7,21 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{D7F6C6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{7E72A4D3-7F60-4323-AE2A-16D6FDB87F84}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgChallenge.WebApi", "source\ProgChallenge.WebApi\ProgChallenge.WebApi.csproj", "{212DEACF-7205-42E1-943A-FFD4E34C47DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgChallenge.WebApi", "source\BackendApp\ProgChallenge.WebApi\ProgChallenge.WebApi.csproj", "{212DEACF-7205-42E1-943A-FFD4E34C47DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{14A7628F-4F75-48A4-AB7E-1C54BF265254}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgChallenge.Application", "source\ProgChallenge.Application\ProgChallenge.Application.csproj", "{DD94A625-ACFB-40DF-B02E-9D92601CB5D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgChallenge.Application", "source\BackendApp\ProgChallenge.Application\ProgChallenge.Application.csproj", "{DD94A625-ACFB-40DF-B02E-9D92601CB5D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgChallenge.Domain", "source\ProgChallenge.Domain\ProgChallenge.Domain.csproj", "{02769CEE-CC28-4E02-9D89-836DE892410E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgChallenge.Domain", "source\BackendApp\ProgChallenge.Domain\ProgChallenge.Domain.csproj", "{02769CEE-CC28-4E02-9D89-836DE892410E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{109710F1-F97B-4966-9191-244A0A3ECF1F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgChallenge.Infrastructure.Persistence", "source\ProgChallenge.Infrastructure.Persistence\ProgChallenge.Infrastructure.Persistence.csproj", "{7E47B767-9061-4D94-B76E-98AA6347CB19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgChallenge.Infrastructure.Persistence", "source\BackendApp\ProgChallenge.Infrastructure.Persistence\ProgChallenge.Infrastructure.Persistence.csproj", "{7E47B767-9061-4D94-B76E-98AA6347CB19}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgChallenge.Infrastructure.Shared", "source\ProgChallenge.Infrastructure.Shared\ProgChallenge.Infrastructure.Shared.csproj", "{B8610017-B38E-40BC-A61D-E01846792D4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgChallenge.Infrastructure.Shared", "source\BackendApp\ProgChallenge.Infrastructure.Shared\ProgChallenge.Infrastructure.Shared.csproj", "{B8610017-B38E-40BC-A61D-E01846792D4D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AF81BCE3-C580-49A0-9EFC-363321970E36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackendApp", "BackendApp", "{37CF7CEB-972B-48E6-B889-89C67B72487F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,14 +56,15 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{7E72A4D3-7F60-4323-AE2A-16D6FDB87F84} = {D7F6C63A-3A60-4152-86C8-1FABCB9A7341}
+		{7E72A4D3-7F60-4323-AE2A-16D6FDB87F84} = {37CF7CEB-972B-48E6-B889-89C67B72487F}
 		{212DEACF-7205-42E1-943A-FFD4E34C47DB} = {7E72A4D3-7F60-4323-AE2A-16D6FDB87F84}
-		{14A7628F-4F75-48A4-AB7E-1C54BF265254} = {D7F6C63A-3A60-4152-86C8-1FABCB9A7341}
+		{14A7628F-4F75-48A4-AB7E-1C54BF265254} = {37CF7CEB-972B-48E6-B889-89C67B72487F}
 		{DD94A625-ACFB-40DF-B02E-9D92601CB5D1} = {14A7628F-4F75-48A4-AB7E-1C54BF265254}
 		{02769CEE-CC28-4E02-9D89-836DE892410E} = {14A7628F-4F75-48A4-AB7E-1C54BF265254}
-		{109710F1-F97B-4966-9191-244A0A3ECF1F} = {D7F6C63A-3A60-4152-86C8-1FABCB9A7341}
+		{109710F1-F97B-4966-9191-244A0A3ECF1F} = {37CF7CEB-972B-48E6-B889-89C67B72487F}
 		{7E47B767-9061-4D94-B76E-98AA6347CB19} = {109710F1-F97B-4966-9191-244A0A3ECF1F}
 		{B8610017-B38E-40BC-A61D-E01846792D4D} = {109710F1-F97B-4966-9191-244A0A3ECF1F}
+		{37CF7CEB-972B-48E6-B889-89C67B72487F} = {D7F6C63A-3A60-4152-86C8-1FABCB9A7341}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB1DFB02-FED8-46AE-BFB0-9472C0AC489E}
